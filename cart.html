@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cart</title>
+  <style>
+
+
+
+    .container-cart {
+      display: flex;
+      justify-content: space-between;
+      margin: 20px auto;
+      padding: 20px;
+      width: 90%;
+      max-width: 1500px;
+      align-items: center;
+      height: 600px;
+      background-color: #b30000;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      margin-top: 200px;
+      margin-bottom: 205px;
+    }
+    .cart-items, .order-summary {
+      background-color: #fff;
+      padding: 20px;
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+      border-radius: 5px;
+    }
+    .cart-items {
+      width: 65%;
+    }
+    .order-summary {
+      width: 33%;
+      padding: 20px;
+      border: 1px solid #ddd;
+    }
+    .container-cart h2, h3 {
+      font-weight: bold;
+      color: #333;
+    }
+    .container-cart table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    .container-cart th, td {
+      padding: 15px;
+      text-align: left;
+      border-bottom: 1px solid #ddd;
+    }
+    .container-cart th {
+      background-color: #f4f4f4;
+    }
+    .product-image {
+      width: 100px;
+      height: 100px;
+      object-fit: cover;
+      margin-right: 10px;
+      cursor: pointer; /* Makes image clickable */
+    }
+    .quantity-control {
+      display: flex;
+      align-items: center;
+    }
+    .quantity-control button {
+      padding: 5px 10px;
+      margin: 0 5px;
+      border: 1px solid #ddd;
+      background-color: #f4f4f4;
+      cursor: pointer;
+    }
+    .quantity-control button:hover {
+      background-color: #ddd;
+    }
+    .remove-btn {
+      color: #b20000;
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-size: 14px;
+    }
+    .remove-btn:hover {
+      text-decoration: underline;
+    }
+    .price-breakdown {
+      margin-top: 20px;
+      border-top: 1px solid #ddd;
+      padding-top: 10px;
+    }
+    .price-breakdown div {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 10px;
+    }
+    .price-breakdown .total {
+      font-weight: bold;
+      font-size: 18px;
+    }
+    .checkout-btn {
+      background-color: #c70000; /* K-Mart red */
+      color: white;
+      padding: 15px;
+      text-align: center;
+      font-size: 16px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      width: 100%;
+    }
+    .checkout-btn:hover {
+      background-color: #a50000;
+    }
+
+   .main-nav button:focus,
+ .main-nav button:active {
+    border-color: #b30000; /* Maintain the original border color */
+    outline: none; /* Remove any focus outline */
+    box-shadow: none; /* Prevent any box-shadow on click */
+}
+    
+  </style>
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="navbarfooter.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+</head>
+<body>
+  <!-- Navbar -->
+  <div class="navbars">
+      <div class="top-bar">
+          <div class="carousel-text">
+              <p class="carousel-item active">Pay via Cash-on-delivery, G-cash, Credit/Debit Card</p>
+              <p class="carousel-item">Fast delivery for authentic Korean products</p>
+              <p class="carousel-item">Enjoy exclusive deals on K-pop merchandise</p>
+          </div>
+      </div>
+      <div class="main-nav">
+          <!-- Menu Icon -->
+<div class="menu-icon" onclick="toggleCategoriesMenu()">
+  <i class="fas fa-bars"></i>
+</div>
+
+<!-- Categories Menu -->
+<div class="categories-menu">
+  <div class="categories-header">
+      <span>PRODUCT CATEGORIES</span>
+      <button class="close-button" onclick="toggleCategoriesMenu()">&#10005;</button>
+  </div>
+  <ul class="categories-list">
+      <li class="category-item">
+          <div class="category-title"><i class="fas fa-utensils"></i>Korean Ramen</div>
+      </li>
+      <li class="category-item">
+          <div class="category-title"><i class="fas fa-music"></i>K-Bundles</div>
+      </li>
+      <li class="category-item">
+          <div class="category-title"><i class="fas fa-utensils"></i>Dessert</div>
+      </li>
+      <li class="category-item">
+          <div class="category-title"><i class="fas fa-coffee"></i>Beverages</div>
+      </li>
+      <li class="category-item">
+          <div class="category-title"><i class="fas fa-cookie-bite"></i>Snacks</div>
+      </li>
+      <li class="category-item">
+          <div class="category-title"><i class="fas fa-utensils"></i>Side-dish</div>
+      </li>
+  </ul>
+</div>
+          <div class="logo">
+            <a href="home.html">
+              <img src="img/KHOT LOGO.png" alt="K-Hot Mart Logo">
+              </a>
+          </div>
+          <div class="search-container">
+              <input type="text" placeholder="I'm shopping for..." class="search-input" />
+              <button class="search-button">Search</button>
+            </div>
+          <div class="nav-icons">
+              <a href="Login.html">
+                  <i class="fa fa-user"></i> <!-- User Icon -->
+              </a>
+              <a href="wishlist.html">
+                  <i class="far fa-heart"></i> <!-- Heart Icon -->
+              </a>
+              <a href="javascript:void(0)" class="cart-icon" onclick="toggleCart()">
+                  <i class="fas fa-shopping-cart"></i> <!-- Cart Icon -->
+              </a>
+
+
+<!-- Sliding Cart -->
+<div class="cart-container" id="cartContainer">
+  <div class="cart-header">
+      <span>SHOPPING CART</span>
+      <button class="close-cart-button" onclick="toggleCart()">&#10005;</button>
+  </div>
+  <div class="cart-content">
+      <div class="empty-cart-message">
+          <i class="fas fa-shopping-cart"></i>
+          <p>Your cart is empty.</p>
+          <button class="return-to-shop-button" onclick="window.location.href='products.html'">Return to Shop</button>
+      </div>
+  </div>
+</div>
+          </div>
+      </div>
+  </div> 
+<!-- End Of Navbar -->
+
+
+  <div class="container-cart">
+    <!-- Cart Items Section -->
+    <div class="cart-items">
+      <h2>Cart Items</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Item</th>
+            <th>Quantity</th>
+            <th>Price</th>
+            <th>Remove</th>
+          </tr>
+        </thead>
+        <tbody id="cart-items">
+          <tr data-price="1999">
+            <td>
+              <a href="#"><img src="img/k-bundle1.png" alt="Kimchi" class="product-image"></a>
+              NewJeans x Pepero K-BUNDLE
+            </td>
+            <td>
+              <div class="quantity-control">
+                <button class="minus">-</button>
+                <span class="quantity">0</span> <!-- Set initial quantity to 0 -->
+                <button class="plus">+</button>
+              </div>
+            </td>
+            <td class="price">₱0</td> <!-- Price will update based on quantity -->
+            <td><button class="remove-btn">Remove</button></td>
+          </tr>
+          <tr data-price="4999">
+            <td>
+              <a href="#"><img src="img/k-bundle2.png" alt="Ramyeon" class="product-image"></a>
+              BTS Jin x Jin Ramen
+            </td>
+            <td>
+              <div class="quantity-control">
+                <button class="minus">-</button>
+                <span class="quantity">0</span> <!-- Set initial quantity to 0 -->
+                <button class="plus">+</button>
+              </div>
+            </td>
+            <td class="price">₱0</td> <!-- Price will update based on quantity -->
+            <td><button class="remove-btn">Remove</button></td>
+          </tr>
+          <tr data-price="79">
+            <td>
+              <a href="#"><img src="img/ramen1.png" alt="Tteokbokki" class="product-image"></a>
+              Samyang Buldak Cheese Hot Chicken
+            </td>
+            <td>
+              <div class="quantity-control">
+                <button class="minus">-</button>
+                <span class="quantity">0</span> <!-- Set initial quantity to 0 -->
+                <button class="plus">+</button>
+              </div>
+            </td>
+            <td class="price">₱0</td> <!-- Price will update based on quantity -->
+            <td><button class="remove-btn">Remove</button></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Order Summary Section -->
+    <div class="order-summary">
+      <h3>Order Summary</h3>
+      <div class="price-breakdown">
+        <div>
+          <span>Subtotal</span>
+          <span id="subtotal">₱0</span> <!-- Initially set to 0 -->
+        </div>
+        <div>
+          <span>Shipping Fee</span>
+          <span id="shipping-fee">₱5</span>
+        </div>
+        <div>
+          <span>Discount</span>
+          <span id="discount">₱-3</span>
+        </div>
+        <div class="total">
+          <span>Total</span>
+          <span id="total">₱2</span> <!-- Calculate based on subtotal -->
+        </div>
+      </div>
+      <a href="payment.html">
+        <button class="checkout-btn" id="checkout-btn">Proceed to Payment</button>
+      </a>
+    </div>
+  </div>
+
+<!---FOOTER-->
+<footer class="footer">
+  <div class="container">
+      <div class="row">
+          <div class="col-md-3">
+              <h2 class="footer-title">K-Hot Mart</h2>
+              <p class="footer-description">Authentic Korean food products and K-pop merchandise delivered to your doorstep.</p>
+          </div>
+          <div class="col-md-3">
+              <h5>About Us</h5>
+              <p>We offer a variety of authentic Korean ramen, snacks, drinks, and K-pop merchandise. Discover the taste of Korea with K-Hot Mart!</p>
+          </div>
+          <div class="col-md-3">
+              <h5>Contact Us</h5>
+              <ul class="list-unstyled">
+                  <li>Email: info@khotmart.com</li>
+                  <li>Phone: +123-456-7890</li>
+                  <li>Address: 123 Street, Seoul, South Korea</li>
+              </ul>
+          </div>
+          <div class="col-md-3">
+              <h5>Follow Us</h5>
+              <ul class="social-links list-inline">
+                  <li class="list-inline-item"><a href="#"><i class="fab fa-facebook"></i></a></li>
+                  <li class="list-inline-item"><a href="#"><i class="fab fa-twitter"></i></a></li>
+                  <li class="list-inline-item"><a href="#"><i class="fab fa-instagram"></i></a></li>
+                  <li class="list-inline-item"><a href="#"><i class="fab fa-linkedin"></i></a></li>
+              </ul>
+          </div>
+      </div>
+      <hr>
+      <div class="row">
+          <div class="col-md-6">
+              <p>&copy; 2024 K-Hot Mart. All rights reserved.</p>
+          </div>
+          <div class="col-md-6 text-end">
+              <ul class="footer-links list-inline">
+                  <li class="list-inline-item"><a href="#">Privacy Policy</a></li>
+                  <li class="list-inline-item"><a href="#">Terms of Service</a></li>
+                  <li class="list-inline-item"><a href="#">Sitemap</a></li>
+              </ul>
+          </div>
+      </div>
+  </div>
+</footer>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@1.16.1/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="navbarfooter.js"></script>
+
+  <script>
+    function updateTotals() {
+      const cartItems = document.querySelectorAll('#cart-items tr');
+      let subtotal = 0;
+
+      cartItems.forEach(item => {
+        const quantity = parseInt(item.querySelector('.quantity').innerText);
+        const pricePerItem = parseInt(item.getAttribute('data-price'));
+        const price = pricePerItem * quantity;
+
+        item.querySelector('.price').innerText = '₱' + price;
+        subtotal += price;
+      });
+
+      document.getElementById('subtotal').innerText = '₱' + subtotal;
+      const total = subtotal + 5 - 3; // Shipping fee = 5, discount = 3
+      document.getElementById('total').innerText = '₱' + total;
+
+      // Store data in local storage
+      const cartData = Array.from(cartItems).map(item => ({
+        name: item.cells[0].innerText.split(' (')[0], // Extract item name
+        quantity: item.querySelector('.quantity').innerText,
+        price: item.querySelector('.price').innerText,
+        image: item.querySelector('.product-image').src // Add image URL
+      }));
+      localStorage.setItem('cart', JSON.stringify(cartData));
+    }
+
+    document.querySelectorAll('.plus').forEach(button => {
+      button.addEventListener('click', function() {
+        const quantitySpan = this.previousElementSibling;
+        let quantity = parseInt(quantitySpan.innerText);
+        quantitySpan.innerText = ++quantity;
+        updateTotals();
+      });
+    });
+
+    document.querySelectorAll('.minus').forEach(button => {
+      button.addEventListener('click', function() {
+        const quantitySpan = this.nextElementSibling;
+        let quantity = parseInt(quantitySpan.innerText);
+        if (quantity > 0) {
+          quantitySpan.innerText = --quantity;
+          updateTotals();
+        }
+      });
+    });
+
+    document.querySelectorAll('.remove-btn').forEach(button => {
+      button.addEventListener('click', function() {
+        this.closest('tr').remove();
+        updateTotals();
+      });
+    });
+
+    // Initial update of totals
+    updateTotals();
+  </script>
+</body>
+</html>

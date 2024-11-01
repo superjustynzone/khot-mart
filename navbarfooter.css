@@ -1,0 +1,345 @@
+/* Global CSS Reset for Box Sizing */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body and HTML settings to prevent overflow */
+html, body {
+    overflow-x: hidden; /* Prevent horizontal scroll */
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+
+/* Top Bar Styling */
+.top-bar {
+    background-color: #b30000;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    font-size: 14px;
+    position: relative;
+    background-color: #b30000;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+/* Carousel Text Styling */
+.carousel-text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.carousel-item {
+    display: none;
+    margin: 0;
+}
+
+.carousel-item.active {
+    display: block;
+}
+
+.navbars {
+    width: 100%;
+}
+
+
+.main-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: white;
+    padding: 10px 20px;
+    border-bottom: 1px solid #ccc;
+}
+
+.menu-icon {
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.logo img {
+    height: 50px;
+    width: 60px;
+}
+
+.nav-icons {
+    display: flex;
+    gap: 15px;
+    font-size: 24px;
+}
+
+.nav-icons span {
+    cursor: pointer;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+/* Search Container */
+.search-container {
+    display: flex;
+    align-items: center;
+    width: 50%;
+    max-width: 600px;
+    border-radius: 50px;
+    overflow: hidden;
+    border: 1px solid #ccc;
+    margin: 0 20px;
+  }
+  
+  /* Search Input */
+  .search-input {
+    flex: 1;
+    padding: 10px 15px;
+    border: none;
+    outline: none;
+    font-size: 1rem;
+  }
+  
+  /* Search Button */
+  .search-button {
+    background-color: #b30000;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.3s ease;
+    border-radius: 0;
+  }
+  
+  .search-button:hover {
+    background-color: #b300009f;
+  }
+
+/* Menu Icon Styling */
+.menu-icon {
+    cursor: pointer;
+    padding: 15px;
+}
+
+/* Categories Menu Styling */
+.categories-menu {
+    position: fixed;
+    top: 0;
+    left: -300px; /* Initially hidden off-screen */
+    width: 300px;
+    height: 100%;
+    background-color: white;
+    overflow-y: auto;
+    transition: left 0.3s ease-in-out;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.3);
+    z-index: 999;
+}
+
+.categories-header {
+    padding: 20px;
+    background-color: #b30000;
+    font-weight: bold;
+    font-size: 18px;
+    border-bottom: 1px solid #ddd;
+    color: white;
+    letter-spacing: 2px;
+}
+
+.categories-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.category-item {
+    padding: 15px 20px;
+    border-bottom: 1px solid #eee;
+    cursor: pointer;
+}
+
+.category-item:hover {
+    background-color: #f0f0f0;
+}
+
+.category-item i {
+    margin-right: 20px;
+}
+
+/* Close Button Styling */
+.close-button {
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    color: white;
+    transition: transform 0.3s ease, color 0.3s ease;
+    right: 20px;
+    top: 20px;
+    color: #ffffff;
+}
+
+.close-button:hover {
+    transform: rotate(90deg); /* Rotate the button on hover */
+    color: #ff6666; /* Change the color when hovered */
+}
+
+@media (max-width: 768px) {
+    .search-container {
+      max-width: 200px;
+    }
+}
+
+/* Sliding Cart Styling */
+.cart-container {
+    position: fixed;
+    top: 0;
+    right: -300px; /* Initially hidden off-screen */
+    width: 300px;
+    height: 100%;
+    background-color: white;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.3);
+    transition: right 0.3s ease-in-out;
+    z-index: 999;
+}
+
+.cart-header {
+    background-color: #b30000;
+    color: white;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 18px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+/* Close Button Styling */
+.close-cart-button {
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    color: white;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.close-cart-button:hover {
+    transform: rotate(90deg); /* Rotate the button on hover */
+    color: #ff6666; /* Change the color when hovered */
+}
+
+.cart-content {
+    padding: 20px;
+}
+
+.empty-cart-message {
+    text-align: center;
+    padding-top: 50px;
+}
+
+.empty-cart-message img {
+    width: 80px;
+    margin-bottom: 20px;
+}
+
+.return-to-shop-button {
+    background-color: #b30000; /* Green color */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+
+/**END OF NAVBAR**/
+
+
+/* Footer Styling */
+.footer {
+    background-color: #b30000;
+    padding: 40px 0;
+    color: white;
+    margin-top: 150px;
+}
+
+.footer-title {
+    font-size: 24px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.footer-description {
+    font-size: 14px;
+    margin-top: 10px;
+    color: #f0f0f0;
+}
+
+.footer h5 {
+    font-size: 18px;
+    margin-bottom: 15px;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+.footer p,
+.footer ul,
+.footer li {
+    font-size: 14px;
+    line-height: 1.5;
+    color: #f0f0f0;
+}
+
+.footer ul {
+    padding: 0;
+    list-style: none;
+}
+
+.footer .social-links a {
+    color: #ffffff;
+    font-size: 20px;
+    margin-right: 15px;
+    transition: color 0.3s;
+}
+
+.footer .social-links a:hover {
+    color: #ff6666;
+}
+
+.footer hr {
+    border-top: 1px solid #ffffff;
+    margin: 20px 0;
+}
+
+.footer-links a {
+    color: #ffffff;
+    font-size: 14px;
+    margin-right: 15px;
+    transition: color 0.3s;
+}
+
+.footer-links a:hover {
+    color: #ff6666;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .footer .col-md-3 {
+        margin-bottom: 20px;
+        text-align: center;
+    }
+    .footer .text-end {
+        text-align: center;
+        margin-top: 10px;
+    }
+}

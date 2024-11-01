@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="login_style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="left-side">
+            <img src="img/login_signup.png" alt="Simplify Management" class="dashboard-image">
+        </div>
+        <div class="right-side">
+            <div class="logo">
+                <img src="img/KHOT LOGO.png" alt="khotlogo">
+                <h2>K-HOTMART</h2>
+            </div>
+            <h3>Welcome Back</h3>
+            <p>Please login to your account</p>
+            
+            <div class="login-buttons">
+                <button id="userBtn" class="login-button" onclick="redirectToLogin('user')">User</button>
+                <button id="adminBtn" class="login-button" onclick="redirectToLogin('admin')">Admin</button>
+            </div>
+            
+            <form id="loginForm">
+                <div class="input-container">
+                    <input type="text" placeholder="Username" required>
+                </div>
+                <div class="input-container">
+                    <input type="password" id="login-password" placeholder="Password" required>
+                    <img src="img/eye-icon.png" class="input-icon" id="toggle-login-password" alt="Toggle Password">
+                </div>                
+                <a href="#" class="forgot-password">Forgot password?</a>
+                <button type="submit">Login</button>
+            </form>
+        </div>
+    </div>
+    <script src="login.js"></script>
+</body>
+</html>

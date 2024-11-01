@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Confirmation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #4caf50;
+        }
+        .order-summary {
+            margin-top: 20px;
+        }
+        .order-summary table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        th {
+            background-color: #f9f9f9;
+        }
+        .product-image {
+            width: 50px;
+            height: 50px;
+            object-fit: cover;
+            margin-right: 10px;
+        }
+        .total {
+            font-weight: bold;
+            font-size: 18px;
+            margin-top: 20px;
+        }
+        .back-btn {
+            display: block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            background-color: #c70000;
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        .back-btn:hover {
+            background-color: #a50000;
+        }
+    </style>
+    <link rel="stylesheet" href="navbarfooter.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1>Payment Confirmed!</h1>
+        <p>Thank you for your purchase. Here are the details of your order:</p>
+
+        <div class="order-summary">
+            <h2>Order Summary</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Item</th>
+                        <th>Quantity</th>
+                        <th>Price</th>
+                    </tr>
+                </thead>
+                <tbody id="order-items">
+                    <!-- Dynamic content populated by JavaScript -->
+                </tbody>
+            </table>
+            <div class="total" id="total-amount"></div>
+        </div>
+
+        <a href="cart.html" class="back-btn">Back to Cart</a>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const cartData = JSON.parse(localStorage.getItem('cart'));
+            const orderItemsContainer = document.getElementById('order-items');
+            const totalAmountContainer = document.getElementById('total-amount');
+
+            if (cartData) {
+                let subtotal = 0;
+
+                cartData.forEach(item => {
+                    const price = parseFloat(item.price.replace('₱', ''));
+                    subtotal += price;
+
+                    const row = `<tr>
+                        <td>
+                            <img src="${item.image}" alt="${item.name}" class="product-image">
+                            ${item.name}
+                        </td>
+                        <td>${item.quantity}</td>
+                        <td>${item.price}</td>
+                    </tr>`;
+                    orderItemsContainer.insertAdjacentHTML('beforeend', row);
+                });
+
+                const total = subtotal + 5 - 3; // Adjust for shipping fee and discount
+                totalAmountContainer.innerText = 'Total Amount: ₱' + total;
+            } else {
+                orderItemsContainer.innerHTML = '<tr><td colspan="3">No items found</td></tr>';
+            }
+        });
+    </script>
+
+</body>
+</html>

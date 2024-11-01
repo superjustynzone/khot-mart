@@ -1,0 +1,766 @@
+/* Global CSS Reset for Box Sizing */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body and HTML settings to prevent overflow */
+html, body {
+    overflow-x: hidden; /* Prevent horizontal scroll */
+    width: 100%;
+    margin: 0;
+    padding: 0;
+
+}
+
+
+/* Top Bar Styling */
+.top-bar {
+    background-color: #b30000;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    font-size: 14px;
+    position: relative;
+    background-color: #b30000;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+/* Carousel Text Styling */
+.carousel-text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.carousel-item {
+    display: none;
+    margin: 0;
+}
+
+.carousel-item.active {
+    display: block;
+}
+
+.navbars {
+    width: 100%;
+}
+
+
+.main-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: white;
+    padding: 10px 20px;
+    border-bottom: 1px solid #ccc;
+}
+
+.menu-icon {
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.logo img {
+    height: 50px;
+    width: 60px;
+
+}
+
+.nav-icons {
+    display: flex;
+    gap: 15px;
+    font-size: 24px;
+}
+
+.nav-icons span {
+    cursor: pointer;
+}
+
+.navbars a {
+    text-decoration: none;
+    color: black;
+}
+
+/* Search Container */
+.search-container {
+    display: flex;
+    align-items: center;
+    width: 50%;
+    max-width: 600px;
+    border-radius: 50px;
+    overflow: hidden;
+    border: 1px solid #ccc;
+}
+  
+  /* Search Input */
+  .search-input {
+    flex: 1;
+    padding: 10px 15px;
+    border: none;
+    outline: none;
+    font-size: 1rem;
+  }
+  
+  /* Search Button */
+  .search-button {
+    background-color: #b30000;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.3s ease;
+    border-radius: 0;
+  }
+  
+  .search-button:hover {
+    background-color: #b300009f;
+  }
+
+/* Menu Icon Styling */
+.menu-icon {
+    cursor: pointer;
+    padding: 15px;
+}
+
+/* Categories Menu Styling */
+.categories-menu {
+    position: fixed;
+    top: 0;
+    left: -300px; /* Initially hidden off-screen */
+    width: 300px;
+    height: 100%;
+    background-color: white;
+    overflow-y: auto;
+    transition: left 0.3s ease-in-out;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.3);
+    z-index: 999;
+}
+
+.categories-header {
+    padding: 20px;
+    background-color: #b30000;
+    font-weight: bold;
+    font-size: 18px;
+    border-bottom: 1px solid #ddd;
+    color: white;
+    letter-spacing: 2px;
+}
+
+.categories-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.category-item {
+    padding: 15px 20px;
+    border-bottom: 1px solid #eee;
+    cursor: pointer;
+}
+
+.category-item:hover {
+    background-color: #f0f0f0;
+}
+
+.category-item i {
+    margin-right: 20px;
+}
+
+/* Close Button Styling */
+.close-button {
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    color: white;
+    transition: transform 0.3s ease, color 0.3s ease;
+    right: 20px;
+    top: 20px;
+    color: #ffffff;
+}
+
+.close-button:hover {
+    transform: rotate(90deg); /* Rotate the button on hover */
+    color: #ff6666; /* Change the color when hovered */
+}
+
+@media (max-width: 768px) {
+    .search-container {
+      max-width: 200px;
+    }
+}
+
+/* Sliding Cart Styling */
+.cart-container {
+    position: fixed;
+    top: 0;
+    right: -300px; /* Initially hidden off-screen */
+    width: 300px;
+    height: 100%;
+    background-color: white;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.3);
+    transition: right 0.3s ease-in-out;
+    z-index: 999;
+}
+
+.cart-header {
+    background-color: #b30000;
+    color: white;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 18px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+/* Close Button Styling */
+.close-cart-button {
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    color: white;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+button:focus,
+button:active {
+    outline: none; /* Remove any focus outline */
+    box-shadow: none; /* Prevent any box-shadow on click */
+}
+
+.close-cart-button:hover {
+    transform: rotate(90deg); /* Rotate the button on hover */
+    color: #ff6666; /* Change the color when hovered */
+}
+
+.cart-content {
+    padding: 20px;
+}
+
+.empty-cart-message {
+    text-align: center;
+    padding-top: 50px;
+}
+
+.empty-cart-message img {
+    width: 80px;
+    margin-bottom: 20px;
+}
+
+.return-to-shop-button {
+    background-color: #b30000; /* Green color */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+
+/**END OF NAVBAR**/
+
+/* Footer Styling */
+.footer {
+    background-color: #b30000;
+    padding: 40px 0;
+    color: white;
+    margin-top: 150px;
+}
+
+.footer-title {
+    font-size: 24px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.footer-description {
+    font-size: 14px;
+    margin-top: 10px;
+    color: #f0f0f0;
+}
+
+.footer h5 {
+    font-size: 18px;
+    margin-bottom: 15px;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+.footer p,
+.footer ul,
+.footer li {
+    font-size: 14px;
+    line-height: 1.5;
+    color: #f0f0f0;
+}
+
+.footer ul {
+    padding: 0;
+    list-style: none;
+}
+
+.footer .social-links a {
+    color: #ffffff;
+    font-size: 20px;
+    margin-right: 15px;
+    transition: color 0.3s;
+}
+
+.footer .social-links a:hover {
+    color: #ff6666;
+}
+
+.footer hr {
+    border-top: 1px solid #ffffff;
+    margin: 20px 0;
+}
+
+.footer-links a {
+    color: #ffffff;
+    font-size: 14px;
+    margin-right: 15px;
+    transition: color 0.3s;
+}
+
+.footer-links a:hover {
+    color: #ff6666;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .footer .col-md-3 {
+        margin-bottom: 20px;
+        text-align: center;
+    }
+    .footer .text-end {
+        text-align: center;
+        margin-top: 10px;
+    }
+}
+/**END OF FOOTER**/
+
+/**WHY CHOOSE US**/
+.why-choose-us {
+    background-color: white;
+    text-align: center;
+    padding: 50px 20px;
+}
+
+.why-choose-us h2 {
+    font-size: 32px;
+    margin-bottom: 10px;
+    letter-spacing: 12px;
+    font-weight: bolder;
+}
+
+.paragraph {
+    letter-spacing: 5px;
+    padding-bottom: 40px;
+    font-size: 18px;
+}
+
+.features {
+    display: flex;
+    justify-content: center;
+    gap: 100px;
+    margin-left: 100px;
+    margin-right: 100px;
+    margin-top: 50px;
+    margin-bottom: 80px;
+}
+
+.feature {
+    background-color: #cc0000;
+    color: white;
+    padding: 50px;
+    width: 100%;
+    box-sizing: border-box;
+    border-radius: 20px;
+}
+
+.feature i {
+    font-size: 80px;
+    margin-bottom: 20px;
+}
+
+.feature h3 {
+    font-size: 22px;
+    margin-bottom: 10px;
+    letter-spacing: 4px;
+}
+
+.feature p {
+    font-size: 16px;
+    line-height: 1.4;
+    letter-spacing: 4px;
+}
+
+@media (max-width: 768px) {
+    .features {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .feature {
+        width: 100%;
+        max-width: 300px;
+    }
+}
+/**END OF WHY CHOOSE US**/
+
+
+
+/* Try It Now Section Styling */
+/* Promo Section Styling */
+.promo-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #b30000;
+    color: white;
+    border-radius: 20px;
+    padding: 80px;
+    margin-top: 30px;
+    margin: 30px;
+
+}
+
+/* Text Styling */
+.promo-text {
+    max-width: 60%;
+}
+
+.promo-subtitle {
+    font-size: 18px;
+    font-weight: 300;
+    margin-bottom: 10px;
+    letter-spacing: 2px;
+}
+
+.promo-title {
+    font-size: 50px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    letter-spacing: 2px;
+}
+
+.promo-description {
+    font-size: 16px;
+    font-weight: 300;
+    margin-bottom: 20px;
+    letter-spacing: 2px;
+}
+
+/* Button Container Styling */
+.promo-buttons {
+    display: flex;
+    gap: 15px;
+}
+
+/* Button Styles (as provided before) */
+.get-started-button,
+.learn-more-button {
+    border: none;
+    border-radius: 50px;
+    padding: 15px 30px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+/* Get Started Button */
+.get-started-button {
+    background-color: #ff4d4d;
+    color: white;
+    box-shadow: inset 0 -4px 0 rgba(0, 0, 0, 0.2);
+    font-weight: bold;
+}
+
+.get-started-button:hover {
+    background-color: white;
+    color: black;
+
+}
+
+/* Learn More Button */
+.learn-more-button {
+    background-color: transparent;
+    border: 2px solid white;
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+    transition: all 0.3s ease;
+    
+}
+
+.learn-more-button:hover {
+    background-color: white;
+    color: black;
+    box-shadow: inset 0 -4px 0 rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive Styles */
+@media (max-width: 1024px) {
+    .promo-section {
+        flex-direction: column;
+        text-align: center;
+        padding: 30px;
+    }
+
+    .promo-content {
+        max-width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .promo-content h2 {
+        font-size: 2em;
+    }
+
+    .promo-content p {
+        font-size: 1.1em;
+    }
+}
+
+@media (max-width: 768px) {
+    .promo-content h2 {
+        font-size: 1.8em;
+    }
+
+    .promo-btn {
+        width: 100%; /* Full width on small screens */
+        padding: 15px;
+    }
+
+    .promo-image img {
+        width: 100%; /* Ensure image scales properly */
+    }
+}
+
+@media (max-width: 480px) {
+    .promo-content h2 {
+        font-size: 1.5em;
+    }
+
+    .promo-content p {
+        font-size: 1em;
+    }
+
+    .promo-btn {
+        font-size: 1em;
+    }
+}
+
+
+/* Hero Section Styles */
+.hero {
+    background: url('img/landingpage.png') center center/cover no-repeat;
+    height: 90vh;
+    display: flex;
+    align-items: center;
+    text-align: left;
+    color: #fff;
+    position: relative;
+    padding: 0 20px; /* Add padding for smaller screens */
+    margin-bottom: 100px;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Dark overlay */
+    z-index: 0;
+}
+
+.hero-content {
+    z-index: 1;
+    max-width: 1000px;
+    margin-left: 50px;
+}
+
+.hero h1 {
+    font-size: 3em;
+    margin-bottom: 0.5em;
+}
+
+
+.hero p {
+    font-size: 1.5em;
+    margin-bottom: 1em;
+}
+
+.hero-btn {
+    padding: 0.75em 2em;
+    background-color: red;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: 0.3s ease;
+    display: inline-block;
+    margin-right: 10px; /* Space between buttons */
+}
+
+.hero-btn:hover {
+    background-color: transparent;
+    border: solid 1px red;
+    text-decoration: none;
+    color: white;
+    transform: scale(1.1);
+}
+
+/* Responsive Hero Section Styles */
+@media (max-width: 768px) {
+    .hero {
+        height: 70vh; /* Reduce height for tablets */
+        text-align: center; /* Center-align for smaller screens */
+        padding: 0 10px;
+    }
+
+    .hero-content {
+        margin: 0 auto;
+        text-align: center;
+        max-width: 100%; /* Expand the content to full width */
+    }
+
+    .hero h1 {
+        font-size: 2.5em; /* Adjust heading size */
+    }
+
+    .hero p {
+        font-size: 1.2em; /* Adjust paragraph size */
+    }
+
+    .hero-btn {
+        width: 40%; /* Make buttons full-width for better touch interaction */
+        margin-bottom: 10px; /* Add spacing between buttons */
+    }
+}
+
+@media (max-width: 480px) {
+    .hero {
+        height: 60vh; /* Adjust height for small screens */
+    }
+
+    .hero h1 {
+        font-size: 2em; /* Smaller heading */
+    }
+
+    .hero p {
+        font-size: 1em;
+    }
+
+    .hero-btn {
+        font-size: 0.9em; /* Smaller button text */
+        padding: 0.5em 1em;
+    }
+}
+
+
+/* Two-Column Slider Styling */
+.two-column-slider {
+    position: relative;
+    max-width: 75%; /* Adjust this value to make the slider smaller */
+    overflow: hidden;
+    margin: 30px auto; /* Center the slider */
+}
+
+.two-column-slides {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.two-column-slide {
+    min-width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Two columns */
+    gap: 30px; /* Reduced gap for a more compact appearance */
+    padding: 10px; /* Reduced padding */
+}
+
+.two-column-slide img {
+    width: 100%;
+    height: 55vh;
+    border-radius: 20px;
+}
+
+
+/* Dot Navigation Styling */
+.dot-navigation {
+    text-align: center;
+    margin-top: 15px;
+}
+
+.dot {
+    height: 15px;
+    width: 15px;
+    margin: 0 5px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.dot.active {
+    background-color: #333;
+}
+
+
+/* Image Container Styling */
+.image-container {
+    text-align: center;
+}
+
+.image-container h3 {
+    font-size: 18px;
+    margin-top: 10px;
+    font-weight: bold;
+    color: #333;
+}
+
+.image-container p {
+    font-size: 14px;
+    color: #666;
+    margin-top: 5px;
+}
+
+/* Product Categories Heading Styling */
+.product-categories-heading {
+    text-align: center;
+    margin: 40px 0;
+}
+
+.product-categories-heading h2 {
+    font-size: 28px;
+    font-weight: bold;
+    color: #333;
+    letter-spacing: 2px;
+}
+
+
+@media (max-width: 768px) {
+    .two-column-slide img  {
+        height: 20vh;
+    }
+}
+
+@media (max-width: 480px) {
+    .two-column-slide img {
+        height: 15vh;
+    }
+}

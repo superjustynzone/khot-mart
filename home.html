@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="home.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+</head>
+<body>
+    <!-- Navbar -->
+    <div class="navbars">
+        <div class="top-bar">
+            <div class="carousel-text">
+                <p class="carousel-item active">Pay via Cash-on-delivery, G-cash, Credit/Debit Card</p>
+                <p class="carousel-item">Fast delivery for authentic Korean products</p>
+                <p class="carousel-item">Enjoy exclusive deals on K-pop merchandise</p>
+            </div>
+        </div>
+        <div class="main-nav">
+            <!-- Menu Icon -->
+<div class="menu-icon" onclick="toggleCategoriesMenu()">
+    <i class="fas fa-bars"></i>
+</div>
+
+<!-- Categories Menu -->
+<div class="categories-menu">
+    <div class="categories-header">
+        <span>PRODUCT CATEGORIES</span>
+        <button class="close-button" onclick="toggleCategoriesMenu()">&#10005;</button>
+    </div>
+    <ul class="categories-list">
+        <li class="category-item">
+            <div class="category-title"><i class="fas fa-utensils"></i>Korean Ramen</div>
+        </li>
+        <li class="category-item">
+            <div class="category-title"><i class="fas fa-music"></i>K-Bundles</div>
+        </li>
+        <li class="category-item">
+            <div class="category-title"><i class="fas fa-utensils"></i>Dessert</div>
+        </li>
+        <li class="category-item">
+            <div class="category-title"><i class="fas fa-coffee"></i>Beverages</div>
+        </li>
+        <li class="category-item">
+            <div class="category-title"><i class="fas fa-cookie-bite"></i>Snacks</div>
+        </li>
+        <li class="category-item">
+            <div class="category-title"><i class="fas fa-utensils"></i>Side-dish</div>
+        </li>
+    </ul>
+</div>
+            <div class="logo">
+                <a href="home.html">
+                    <img src="img/KHOT LOGO.png" alt="K-Hot Mart Logo">
+                    </a>
+            </div>
+            <div class="search-container">
+                <input type="text" placeholder="I'm shopping for..." class="search-input" />
+                <button class="search-button">Search</button>
+              </div>
+            <div class="nav-icons">
+                <a href="Login.html">
+                    <i class="fa fa-user"></i> <!-- User Icon -->
+                </a>
+                <a href="wishlist.html">
+                    <i class="far fa-heart"></i> <!-- Heart Icon -->
+                </a>
+                <a href="javascript:void(0)" class="cart-icon" onclick="toggleCart()">
+                    <i class="fas fa-shopping-cart"></i> <!-- Cart Icon -->
+                </a>
+
+
+<!-- Sliding Cart -->
+<div class="cart-container" id="cartContainer">
+    <div class="cart-header">
+        <span>SHOPPING CART</span>
+        <button class="close-cart-button" onclick="toggleCart()">&#10005;</button>
+    </div>
+    <div class="cart-content">
+        <div class="empty-cart-message">
+            <i class="fas fa-shopping-cart"></i>
+            <p>Your cart is empty.</p>
+            <button class="return-to-shop-button" onclick="window.location.href='products.html'">Return to Shop</button>
+        </div>
+    </div>
+</div>
+            </div>
+        </div>
+    </div> 
+<!-- End Of Navbar -->
+
+<!-- Hero Section -->
+<section class="hero">
+    <div class="hero-content">
+        <h1>Welcome to <strong style="color: red;">K-Hot Mart</strong> – Your Gateway to Authentic Korean Delights</h1>
+        <p>Explore our premium selection of Korean ramen, snacks, and K-pop merchandise.</p>
+        <a href="products.html" class="hero-btn">Shop Now</a>
+    </div>
+</section>
+<!-- END OF Hero Section -->
+
+<div class="product-categories-heading">
+    <h2>Product Categories</h2>
+</div>
+
+<!-- Two-Column Image Slider -->
+<div class="two-column-slider">
+    <div class="two-column-slides">
+        <div class="two-column-slide">
+            <div class="image-container">
+                <img src="img/homeramen.png" alt="Image 1">
+                <h3>Korean Ramen</h3>
+                <p>Served in hot</p>
+            </div>
+            <div class="image-container">
+                <img src="img/homedesserts.png" alt="Image 2">
+                <h3>Dessert</h3>
+                <p>Sweet and tasty</p>
+            </div>
+        </div>
+        <div class="two-column-slide">
+            <div class="image-container">
+                <img src="img/homebeverages.png" alt="Image 3">
+                <h3>Beverages</h3>
+                <p>Any type of drink</p>
+            </div>
+            <div class="image-container">
+                <img src="img/homesnacks.png" alt="Image 4">
+                <h3>Snacks</h3>
+                <p>Deliciousness in every bite</p>
+            </div>
+        </div>
+        <div class="two-column-slide">
+            <div class="image-container">
+                <img src="img/homesidedish.png" alt="Image 5">
+                <h3>Side-dish</h3>
+                <p>Compliments with greatness</p>
+            </div>
+            <div class="image-container">
+                <img src="img/homebundle.png" alt="Image 6">
+                <h3>K-Bundles</h3>
+                <p>Mix & match perfection</p>
+            </div>
+        </div>
+    </div>
+    <!-- Dot Navigation -->
+    <div class="dot-navigation">
+        <span class="dot" onclick="currentTwoColumnSlide(0)"></span>
+        <span class="dot" onclick="currentTwoColumnSlide(1)"></span>
+        <span class="dot" onclick="currentTwoColumnSlide(2)"></span>
+    </div>
+</div>
+<!-- End of Two-Column Image Slider -->
+
+<!-- Try It Now Section -->
+    <div class="why-choose-us">
+        <h2>WHY CHOOSE US?</h2>
+        <h3 class="paragraph">You will choose us because you get to taste korean authenticity products from us and we deliver fast<h3>
+        <div class="features">
+            <div class="feature">
+                <i class="fas fa-utensils"></i>
+                <h3>Serve Tasty Food</h3>
+                <p>You will choose us because you get to taste korean authenticity products from us and we deliver fast</p>
+            </div>
+            <div class="feature">
+                <i class="fas fa-truck"></i>
+                <h3>Fast Delivery</h3>
+                <p>You will choose us because you get to taste korean authenticity products from us and we deliver fast</p>
+            </div>
+            <div class="feature">
+                <i class="fas fa-check"></i>
+                <h3>Best Quality Products</h3>
+                <p>You will choose us because you get to taste korean authenticity products from us and we deliver fast</p>
+            </div>
+        </div>
+    </div>
+    <!-- END OF Try It Now Section -->
+
+
+    <!-- Try It Now Section -->
+    <div class="promo-section">
+        <div class="promo-text">
+            <p class="promo-subtitle">Try It Now</p>
+            <h2 class="promo-title">Ready to taste the Korean cuisine?</h2>
+            <p class="promo-description">You will choose us because you get to taste Korean authentic products from us, and we deliver fast.</p>
+        </div>
+        <div class="promo-buttons">
+            <button class="get-started-button">Get Started Now</button>
+            <button class="learn-more-button">Learn More</button>
+        </div>
+    </div>    
+<!-- END OF Try It Now Section -->
+
+<footer class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3">
+                <h2 class="footer-title">K-Hot Mart</h2>
+                <p class="footer-description">Authentic Korean food products and K-pop merchandise delivered to your doorstep.</p>
+            </div>
+            <div class="col-md-3">
+                <h5>About Us</h5>
+                <p>We offer a variety of authentic Korean ramen, snacks, drinks, and K-pop merchandise. Discover the taste of Korea with K-Hot Mart!</p>
+            </div>
+            <div class="col-md-3">
+                <h5>Contact Us</h5>
+                <ul class="list-unstyled">
+                    <li>Email: info@khotmart.com</li>
+                    <li>Phone: +123-456-7890</li>
+                    <li>Address: 123 </li>
+                </ul>
+            </div>
+            <div class="col-md-3">
+                <h5>Follow Us</h5>
+                <ul class="social-links list-inline">
+                    <li class="list-inline-item"><a href="#"><i class="fab fa-facebook"></i></a></li>
+                    <li class="list-inline-item"><a href="#"><i class="fab fa-twitter"></i></a></li>
+                    <li class="list-inline-item"><a href="#"><i class="fab fa-instagram"></i></a></li>
+                    <li class="list-inline-item"><a href="#"><i class="fab fa-linkedin"></i></a></li>
+                </ul>
+            </div>
+        </div>
+        <hr>
+        <div class="row">
+            <div class="col-md-6">
+                <p>&copy; 2024 K-Hot Mart. All rights reserved.</p>
+            </div>
+            <div class="col-md-6 text-end">
+                <ul class="footer-links list-inline">
+                    <li class="list-inline-item"><a href="#">Privacy Policy</a></li>
+                    <li class="list-inline-item"><a href="#">Terms of Service</a></li>
+                    <li class="list-inline-item"><a href="#">Sitemap</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</footer>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="home.js"></script>
+</body>
+</html>

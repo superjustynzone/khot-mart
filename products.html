@@ -1,0 +1,797 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PRODUCTS</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="products.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <div class="navbars">
+        <div class="top-bar">
+            <div class="carousel-text">
+                <p class="carousel-item active">Pay via Cash-on-delivery, G-cash, Credit/Debit Card</p>
+                <p class="carousel-item">Fast delivery for authentic Korean products</p>
+                <p class="carousel-item">Enjoy exclusive deals on K-pop merchandise</p>
+            </div>
+        </div>
+        <div class="main-nav">
+            <!-- Menu Icon -->
+<div class="menu-icon" onclick="toggleCategoriesMenu()">
+    <i class="fas fa-bars"></i>
+</div>
+
+<!-- Categories Menu -->
+<div class="categories-menu">
+    <div class="categories-header">
+        <span>PRODUCT CATEGORIES</span>
+        <button class="close-button" onclick="toggleCategoriesMenu()">&#10005;</button>
+    </div>
+    <ul class="categories-list">
+        <li class="category-item">
+            <div class="category-title"><i class="fas fa-utensils"></i>Korean Ramen</div>
+        </li>
+        <li class="category-item">
+            <div class="category-title"><i class="fas fa-music"></i>K-Bundles</div>
+        </li>
+        <li class="category-item">
+            <div class="category-title"><i class="fas fa-utensils"></i>Dessert</div>
+        </li>
+        <li class="category-item">
+            <div class="category-title"><i class="fas fa-coffee"></i>Beverages</div>
+        </li>
+        <li class="category-item">
+            <div class="category-title"><i class="fas fa-cookie-bite"></i>Snacks</div>
+        </li>
+        <li class="category-item">
+            <div class="category-title"><i class="fas fa-utensils"></i>Side-dish</div>
+        </li>
+    </ul>
+</div>
+            <div class="logo">
+                <a href="home.html">
+                    <img src="img/KHOT LOGO.png" alt="K-Hot Mart Logo">
+                    </a>
+            </div>
+            <div class="search-container">
+                <input type="text" placeholder="I'm shopping for..." class="search-input" />
+                <button class="search-button">Search</button>
+              </div>
+            <div class="nav-icons">
+                <a href="Login.html">
+                    <i class="fa fa-user"></i> <!-- User Icon -->
+                </a>
+                <a href="wishlist.html">
+                    <i class="far fa-heart"></i> <!-- Heart Icon -->
+                </a>
+                <a href="javascript:void(0)" class="cart-icon" onclick="toggleCart()">
+                    <i class="fas fa-shopping-cart"></i> <!-- Cart Icon -->
+                </a>
+
+
+<!-- Sliding Cart -->
+<div class="cart-container" id="cartContainer">
+    <div class="cart-header">
+        <span>SHOPPING CART</span>
+        <button class="close-cart-button" onclick="toggleCart()">&#10005;</button>
+    </div>
+    <div class="cart-content">
+        <div class="empty-cart-message">
+            <i class="fas fa-shopping-cart"></i>
+            <p>Your cart is empty.</p>
+            <button class="return-to-shop-button" onclick="window.location.href='products.html'">Return to Shop</button>
+        </div>
+    </div>
+</div>
+            </div>
+        </div>
+    </div> 
+<!-- End Of Navbar -->
+
+    <div class="banner">
+        <img src="img/image.png" alt="Banner Image">
+    </div>
+
+    
+    <div class="product-categories">
+        <h2>Product Categories</h2>
+        <div class="categories-wrapper">
+            <div class="categories">
+                <!-- K-BUNDLES Category -->
+                <div class="category">
+                    <button class="active" onclick="toggleCategory('k-bundles')">K-BUNDLES</button>
+                    <button class="active" onclick="toggleCategory('ramen')">RAMEN</button>
+                    <button class="active" onclick="toggleCategory('side-dish')">SIDE-DISH</button>
+                    <button class="active" onclick="toggleCategory('beverages')">BEVERAGES</button>
+                    <button class="active" onclick="toggleCategory('snacks')">SNACKS</button>
+                    <button class="active" onclick="toggleCategory('desserts')">DESSERTS</button>
+                    <div id="k-bundles" class="product-list active">
+                        <!-- Product Cards for K-Bundles -->
+                        <div class="product-card">
+                            <img src="img/k-bundle1.png" alt="K-Bundle 1">
+                            <div class="like"><i class="fa fa-heart" aria-hidden="true"></i></div></a>
+                            <p class="product-name">NewJeans x Pepero</p>
+                            <p class="product-names">K-BUNDLE</p>
+                            <p class="product-price">₱1999.00</p>
+                            <div class="stars">
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star-text">5.0</span>
+                            </div> 
+                            <button class="add-to-cart" onclick="window.location.href='cart.html'">ADD TO CART</button>
+                        </div>
+                        <div class="product-card">
+                            <img src="img/k-bundle2.png" alt="K-Bundle 2">
+                            <div class="like"><i class="fa fa-heart" aria-hidden="true"></i></div></a>
+                            <p class="product-name">BTS Jin x Jin Ramen</p>
+                            <p class="product-names">K-BUNDLE</p>
+                            <p class="product-price">₱4999.00</p>
+                            <div class="stars">
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star-text">5.0</span>
+                            </div> 
+                            <button class="add-to-cart" onclick="window.location.href='products.html'">ADD TO CART</button>
+                        </div>
+                    </div>
+                    </div>
+
+
+                    <div id="ramen" class="product-list">
+                        <!-- Product Cards for Ramen -->
+                        <div class="product-card">
+                            <img src="img/ramen1.png" alt="Ramen 1">
+                            <div class="like"><i class="fa fa-heart" aria-hidden="true"></i></div></a>
+                            <p class="product-name">Samyang Buldak</p>
+                            <p class="product-names">Cheese Hot Chicken</p>
+                            <p class="product-price">₱79.00</p>
+                            <div class="stars">
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">☆</span>
+                                <span class="star-text">4.8</span>
+                            </div> 
+                            <button class="add-to-cart">ADD TO CART</button>
+                        </div>
+                        <div class="product-card">
+                            <img src="img/ramen2.png" alt="Ramen 2">
+                            <div class="like"><i class="fa fa-heart" aria-hidden="true"></i></div></a>
+                            <p class="product-name">Samyang Buldak</p>
+                            <p class="product-names">Cream Carbonara</p>
+                            <p class="product-price">₱89.00</p>
+                            <div class="stars">
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">☆</span>
+                                <span class="star-text">4.8</span>
+                            </div> 
+                            <button class="add-to-cart" onclick="window.location.href='cart.html'">ADD TO CART</button>
+                        </div>
+                        <div class="product-card">
+                            <img src="img/ramen3.png" alt="Ramen 3">
+                            <div class="like"><i class="fa fa-heart" aria-hidden="true"></i></div></a>
+                            <p class="product-name">Samyang Buldak</p>
+                            <p class="product-names">2x Spicy</p>
+                            <p class="product-price">₱119.00</p>
+                            <div class="stars">
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">☆</span>
+                                <span class="star-text">4.8</span>
+                            </div> 
+                            <button class="add-to-cart">ADD TO CART</button>
+                        </div>
+                        <div class="product-card">
+                            <img src="img/ramen4.png" alt="Ramen 4">
+                            <div class="like"><i class="fa fa-heart" aria-hidden="true"></i></div></a>
+                            <p class="product-name">Samyang Buldak</p>
+                            <p class="product-names">10x Super Spicy</p>
+                            <p class="product-price">₱119.00</p>
+                            <div class="stars">
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">☆</span>
+                                <span class="star-text">4.8</span>
+                            </div> 
+                            <button class="add-to-cart">ADD TO CART</button>
+                        </div>
+                        <div class="product-card">
+                            <img src="img/ramen5.png" alt="Ramen 5">
+                            <div class="like"><i class="fa fa-heart" aria-hidden="true"></i></div></a>
+                            <p class="product-name">Ottogi Stir-fry</p>
+                            <p class="product-names">Cheese Ramen</p>
+                            <p class="product-price">₱79.00</p>
+                            <div class="stars">
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">☆</span>
+                                <span class="star-text">4.8</span>
+                            </div> 
+                            <button class="add-to-cart">ADD TO CART</button>
+                        </div>
+                        <div class="product-card">
+                            <img src="img/ramen6.png" alt="Ramen 6">
+                            <div class="like"><i class="fa fa-heart" aria-hidden="true"></i></div></a>
+                            <p class="product-name">Ottogi Jin Ramen</p>
+                            <p class="product-names">Mild</p>
+                            <p class="product-price">₱49.00</p>
+                            <div class="stars">
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">☆</span>
+                                <span class="star-text">4.8</span>
+                            </div> 
+                            <button class="add-to-cart">ADD TO CART</button>
+                        </div>
+                        <div class="product-card">
+                            <img src="img/ramen7.png" alt="Ramen 7">
+                            <div class="like"><i class="fa fa-heart" aria-hidden="true"></i></div></a>
+                            <p class="product-name">Nongshim Shin </p>
+                            <p class="product-names">Ramyun</p>
+                            <p class="product-price">₱69.00</p>
+                            <div class="stars">
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">☆</span>
+                                <span class="star-text">4.8</span>
+                            </div> 
+                            <button class="add-to-cart">ADD TO CART</button>
+                        </div>
+                        <div class="product-card">
+                            <img src="img/ramen8.png" alt="Ramen 8">
+                            <div class="like"><i class="fa fa-heart" aria-hidden="true"></i></div></a>
+                            <p class="product-name">Samyang Original</p>
+                            <p class="product-names">Beef Ramen</p>
+                            <p class="product-price">₱39.00</p>
+                            <div class="stars">
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">☆</span>
+                                <span class="star-text">4.8</span>
+                            </div> 
+                            <button class="add-to-cart">ADD TO CART</button>
+                        </div>
+                        </div>
+
+
+
+                    <div id="side-dish" class="product-list">
+                        <!-- Product Cards for Side-Dish -->
+                        <div class="product-card">
+                            <img src="img/side-dish1.png" alt="Side-Dish 1">
+                            <div class="like"><i class="fa fa-heart" aria-hidden="true"></i></div></a>
+                            <p class="product-name">Korean Hansung</p>
+                            <p class="product-names">Crab Meat</p>
+                            <p class="product-price">₱339.00</p>
+                            <div class="stars">
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">☆</span>
+                                <span class="star-text">4.8</span>
+                            </div> 
+                            <button class="add-to-cart">ADD TO CART</button>
+                        </div>
+                        <div class="product-card">
+                            <img src="img/side-dish2.png" alt="Side-Dish 2">
+                            <div class="like"><i class="fa fa-heart" aria-hidden="true"></i></div></a>
+                            <p class="product-name">Yopokki</p>
+                            <p class="product-names">Cheese Flavor</p>
+                            <p class="product-price">55 PHP</p>
+                            <div class="stars">
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">☆</span>
+                                <span class="star-text">4.8</span>
+                            </div> 
+                            <button class="add-to-cart">ADD TO CART</button>
+                        </div>
+                        <div class="product-card">
+                            <img src="img/side-dish3.png" alt="Side-Dish 3">
+                            <div class="like"><i class="fa fa-heart" aria-hidden="true"></i></div></a>
+                            <p class="product-name">Korean Enoki</p>
+                            <p class="product-names">Mushroom</p>
+                            <p class="product-price">₱129.00</p>
+                            <div class="stars">
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">☆</span>
+                                <span class="star-text">4.8</span>
+                            </div> 
+                            <button class="add-to-cart">ADD TO CART</button>
+                        </div>
+                        <div class="product-card">
+                            <img src="img/side-dish4.png" alt="Side-Dish 4">
+                            <div class="like"><i class="fa fa-heart" aria-hidden="true"></i></div></a>
+                            <p class="product-name">Korean Enoki</p>
+                            <p class="product-names">Kimchi</p>
+                            <p class="product-price">₱369.00</p>
+                            <div class="stars">
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">☆</span>
+                                <span class="star-text">4.8</span>
+                            </div> 
+                            <button class="add-to-cart">ADD TO CART</button>
+                        </div>
+                    </div>
+                    <div id="beverages" class="product-list">
+                        <!-- Product Cards for Beverages -->
+                        <div class="product-card">
+                            <img src="img/beverage1.png" alt="Beverage 1">
+                            <div class="like"><i class="fa fa-heart" aria-hidden="true"></i></div></a>
+                            <p class="product-name">Binggrae Coffee</p>
+                            <p class="product-names">Flavored Milk Drink</p>
+                            <p class="product-price">₱49.00</p>
+                            <div class="stars">
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">☆</span>
+                                <span class="star-text">4.8</span>
+                            </div> 
+                            <button class="add-to-cart">ADD TO CART</button>
+                        </div>
+                        <div class="product-card">
+                            <img src="img/beverage2.png" alt="Beverage 2">
+                            <div class="like"><i class="fa fa-heart" aria-hidden="true"></i></div></a>
+                            <p class="product-name">Binggrae Strawberry</p>
+                            <p class="product-names">Flavored Milk Drink</p>
+                            <p class="product-price">₱49.00</p>
+                            <div class="stars">
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">☆</span>
+                                <span class="star-text">4.8</span>
+                            </div> 
+                            <button class="add-to-cart">ADD TO CART</button>
+                        </div>
+                        <div class="product-card">
+                            <img src="img/beverage3.png" alt="Beverage 3">
+                            <div class="like"><i class="fa fa-heart" aria-hidden="true"></i></div></a>
+                            <p class="product-name">Binggrae Melon</p>
+                            <p class="product-names">Flavored Milk Drink</p>
+                            <p class="product-price">₱49.00</p>
+                            <div class="stars">
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">☆</span>
+                                <span class="star-text">4.8</span>
+                            </div> 
+                            <button class="add-to-cart">ADD TO CART</button>
+                        </div>
+                        <div class="product-card">
+                            <img src="img/beverage4.png" alt="Beverage 4">
+                            <div class="like"><i class="fa fa-heart" aria-hidden="true"></i></div></a>
+                            <p class="product-name">Binggrae Banana</p>
+                            <p class="product-names">Flavored Milk Drink</p>
+                            <p class="product-price">₱49.00</p>
+                            <div class="stars">
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">☆</span>
+                                <span class="star-text">4.8</span>
+                            </div> 
+                            <button class="add-to-cart">ADD TO CART</button>
+                        </div>
+                        <div class="product-card">
+                            <img src="img/beverage5.png" alt="Beverage 5">
+                            <div class="like"><i class="fa fa-heart" aria-hidden="true"></i></div></a>
+                            <p class="product-name">Caffee Bene</p>
+                            <p class="product-names">Peach Ice Tea</p>
+                            <p class="product-price">₱54.00</p>
+                            <div class="stars">
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">☆</span>
+                                <span class="star-text">4.8</span>
+                            </div> 
+                            <button class="add-to-cart">ADD TO CART</button>
+                        </div>
+                        <div class="product-card">
+                            <img src="img/beverage6.png" alt="Beverage 6">
+                            <div class="like"><i class="fa fa-heart" aria-hidden="true"></i></div></a>
+                            <p class="product-name">Caffee Bene</p>
+                            <p class="product-names">Blue Lemon Ice Tea</p>
+                            <p class="product-price">₱54.00</p>
+                            <div class="stars">
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">☆</span>
+                                <span class="star-text">4.8</span>
+                            </div> 
+                            <button class="add-to-cart">ADD TO CART</button>
+                        </div>
+                        <div class="product-card">
+                            <img src="img/beverage7.png" alt="Beverage 7">
+                            <div class="like"><i class="fa fa-heart" aria-hidden="true"></i></div></a>
+                            <p class="product-name">Caffee Bene</p>
+                            <p class="product-names">Pineapple Ice Tea</p>
+                            <p class="product-price">₱54.00</p>
+                            <div class="stars">
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">☆</span>
+                                <span class="star-text">4.8</span>
+                            </div> 
+                            <button class="add-to-cart">ADD TO CART</button>
+                        </div>
+                        <div class="product-card">
+                            <img src="img/beverage8.png" alt="Beverage 8">
+                            <div class="like"><i class="fa fa-heart" aria-hidden="true"></i></div></a>
+                            <p class="product-name">Caffee Bene</p>
+                            <p class="product-names">Watermelon Ice Tea</p>
+                            <p class="product-price">₱54.00</p>
+                            <div class="stars">
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">☆</span>
+                                <span class="star-text">4.8</span>
+                            </div> 
+                            <button class="add-to-cart">ADD TO CART</button>
+                        </div>
+                        <div class="product-card">
+                            <img src="img/beverage9.png" alt="Beverage 9">
+                            <div class="like"><i class="fa fa-heart" aria-hidden="true"></i></div></a>
+                            <p class="product-name">Jinro Chamisul</p>
+                            <p class="product-names">Fresh Soju</p>
+                            <p class="product-price">₱119.00</p>
+                            <div class="stars">
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">☆</span>
+                                <span class="star-text">4.8</span>
+                            </div> 
+                            <button class="add-to-cart">ADD TO CART</button>
+                        </div>
+                        <div class="product-card">
+                            <img src="img/beverage10.png" alt="Beverage 10">
+                            <div class="like"><i class="fa fa-heart" aria-hidden="true"></i></div></a>
+                            <p class="product-name">Jinro Soju</p>
+                            <p class="product-names">Green Grape</p>
+                            <p class="product-price">₱119.00</p>
+                            <div class="stars">
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">☆</span>
+                                <span class="star-text">4.8</span>
+                            </div> 
+                            <button class="add-to-cart">ADD TO CART</button>
+                        </div>
+                        <div class="product-card">
+                            <img src="img/beverage11.png" alt="Beverage 11">
+                            <div class="like"><i class="fa fa-heart" aria-hidden="true"></i></div></a>
+                            <p class="product-name">Jinro Soju</p>
+                            <p class="product-names">Strawberry</p>
+                            <p class="product-price">₱119.00</p>
+                            <div class="stars">
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">☆</span>
+                                <span class="star-text">4.8</span>
+                            </div> 
+                            <button class="add-to-cart">ADD TO CART</button>
+                        </div>
+                        <div class="product-card">
+                            <img src="img/beverage12.png" alt="Beverage 12">
+                            <div class="like"><i class="fa fa-heart" aria-hidden="true"></i></div></a>
+                            <p class="product-name">Jinro Chamisul</p>
+                            <p class="product-names">Original Soju</p>
+                            <p class="product-price">₱119.00</p>
+                            <div class="stars">
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">☆</span>
+                                <span class="star-text">4.8</span>
+                            </div> 
+                            <button class="add-to-cart">ADD TO CART</button>
+                        </div>
+                    </div>
+                    <div id="snacks" class="product-list">
+                        <!-- Product Cards for Snacks -->
+                        <div class="product-card">
+                            <img src="img/snack1.png" alt="Snack 1">
+                            <div class="like"><i class="fa fa-heart" aria-hidden="true"></i></div></a>
+                            <p class="product-name">Lotte Pepero Almond </p>
+                            <p class="product-names">Chocolate</p>
+                            <p class="product-price">₱79.00</p>
+                            <div class="stars">
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">☆</span>
+                                <span class="star-text">4.8</span>
+                            </div> 
+                            <button class="add-to-cart">ADD TO CART</button>
+                        </div>
+                        <div class="product-card">
+                            <img src="img/snack2.png" alt="Snack 2">
+                            <div class="like"><i class="fa fa-heart" aria-hidden="true"></i></div></a>
+                            <p class="product-name">Lotte Pepero</p>
+                            <p class="product-names">Choco-Filled</p>
+                            <p class="product-price">₱79.00</p>
+                            <div class="stars">
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">☆</span>
+                                <span class="star-text">4.8</span>
+                            </div> 
+                            <button class="add-to-cart">ADD TO CART</button>
+                        </div>
+                        <div class="product-card">
+                            <img src="img/snack3.png" alt="Snack 3">
+                            <div class="like"><i class="fa fa-heart" aria-hidden="true"></i></div></a>
+                            <p class="product-name">Lotte Pepero</p>
+                            <p class="product-names">Snowy Almond</p>
+                            <p class="product-price">₱79.00</p>
+                            <div class="stars">
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">☆</span>
+                                <span class="star-text">4.8</span>
+                            </div> 
+                            <button class="add-to-cart">ADD TO CART</button>
+                        </div>
+                        <div class="product-card">
+                            <img src="img/snack4.png" alt="Snack 4">
+                            <div class="like"><i class="fa fa-heart" aria-hidden="true"></i></div></a>
+                            <p class="product-name">Lotte Pepero</p>
+                            <p class="product-names">Original</p>
+                            <p class="product-price">₱79.00</p>
+                            <div class="stars">
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">☆</span>
+                                <span class="star-text">4.8</span>
+                            </div> 
+                            <button class="add-to-cart">ADD TO CART</button>
+                        </div>
+                        <div class="product-card">
+                            <img src="img/snack5.png" alt="Snack 5">
+                            <div class="like"><i class="fa fa-heart" aria-hidden="true"></i></div></a>
+                            <p class="product-name">Jack 'n Jill Callbee</p>
+                            <p class="product-names">Honey Butter Chips</p>
+                            <p class="product-price">₱69.00</p>
+                            <div class="stars">
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">☆</span>
+                                <span class="star-text">4.8</span>
+                            </div> 
+                            <button class="add-to-cart">ADD TO CART</button>
+                        </div>
+                        <div class="product-card">
+                            <img src="img/snack6.png" alt="Snack 6">
+                            <div class="like"><i class="fa fa-heart" aria-hidden="true"></i></div></a>
+                            <p class="product-name">Korean Orion Choco</p>
+                            <p class="product-names">Pie</p>
+                            <p class="product-price">₱279.00</p>
+                            <div class="stars">
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">☆</span>
+                                <span class="star-text">4.8</span>
+                            </div> 
+                            <button class="add-to-cart">ADD TO CART</button>
+                        </div>
+                        <div class="product-card">
+                            <img src="img/snack7.png" alt="Snack 7">
+                            <div class="like"><i class="fa fa-heart" aria-hidden="true"></i></div></a>
+                            <p class="product-name">KKokkalcorn Original</p>
+                            <p class="product-names">Flavor</p>
+                            <p class="product-price">₱79.00</p>
+                            <div class="stars">
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">☆</span>
+                                <span class="star-text">4.8</span>
+                            </div> 
+                            <button class="add-to-cart">ADD TO CART</button>
+                        </div>
+                        <div class="product-card">
+                            <img src="img/snack8.png" alt="Snack 8">
+                            <div class="like"><i class="fa fa-heart" aria-hidden="true"></i></div></a>
+                            <p class="product-name">Namkwang Korean</p>
+                            <p class="product-names">Seasoned Seaweed</p>
+                            <p class="product-price">₱44.00</p>
+                            <div class="stars">
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">☆</span>
+                                <span class="star-text">4.8</span>
+                            </div> 
+                            <button class="add-to-cart">ADD TO CART</button>
+                        </div>
+                    </div>
+                </div>    
+                <div id="desserts" class="product-list">
+                    <!-- Product Cards for Desserts  -->
+                    <div class="product-card">
+                        <img src="img/dessert1.png" alt="Dessert 1">
+                        <div class="like"><i class="fa fa-heart" aria-hidden="true"></i></div></a>
+                        <p class="product-name">Binggrae Melona</p>
+                        <p class="product-names">Ice Cream Melon</p>
+                        <p class="product-price">₱34.00</p>
+                        <div class="stars">
+                            <span class="star">★</span>
+                            <span class="star">★</span>
+                            <span class="star">★</span>
+                            <span class="star">★</span>
+                            <span class="star">☆</span>
+                            <span class="star-text">4.8</span>
+                        </div> 
+                        <button class="add-to-cart">ADD TO CART</button>
+                    </div>
+                    <div class="product-card">
+                        <img src="img/dessert2.png" alt="Dessert 2">
+                        <div class="like"><i class="fa fa-heart" aria-hidden="true"></i></div></a>
+                        <p class="product-name">Binggrae Melona</p>
+                        <p class="product-names">Ice Cream Strawberry</p>
+                        <p class="product-price">₱34.00</p>
+                        <div class="stars">
+                            <span class="star">★</span>
+                            <span class="star">★</span>
+                            <span class="star">★</span>
+                            <span class="star">★</span>
+                            <span class="star">☆</span>
+                            <span class="star-text">4.8</span>
+                        </div> 
+                        <button class="add-to-cart">ADD TO CART</button>
+                    </div>
+                    <div class="product-card">
+                        <img src="img/dessert3.png" alt="Dessert 3">
+                        <div class="like"><i class="fa fa-heart" aria-hidden="true"></i></div></a>
+                        <p class="product-name">Binggrae Melona</p>
+                        <p class="product-names">Ice Cream Coconut</p>
+                        <p class="product-price">₱34.00</p>
+                        <div class="stars">
+                            <span class="star">★</span>
+                            <span class="star">★</span>
+                            <span class="star">★</span>
+                            <span class="star">★</span>
+                            <span class="star">☆</span>
+                            <span class="star-text">4.8</span>
+                        </div> 
+                        <button class="add-to-cart">ADD TO CART</button>
+                    </div>
+                    <div class="product-card">
+                        <img src="img/dessert4.png" alt="Dessert 4">
+                        <div class="like"><i class="fa fa-heart" aria-hidden="true"></i></div></a>
+                        <p class="product-name">Binggrae Melona</p>
+                        <p class="product-names">Ice Cream Banana</p>
+                        <p class="product-price">₱34.00</p>
+                        <div class="stars">
+                            <span class="star">★</span>
+                            <span class="star">★</span>
+                            <span class="star">★</span>
+                            <span class="star">★</span>
+                            <span class="star">☆</span>
+                            <span class="star-text">4.8</span>
+                        </div> 
+                        <button class="add-to-cart">ADD TO CART</button>
+                    </div> 
+                    </div>
+            </div>
+            </div>
+
+    <!---FOOTER-->
+    <footer class="footer">
+      <div class="container">
+          <div class="row">
+              <div class="col-md-3">
+                  <h2 class="footer-title">K-Hot Mart</h2>
+                  <p class="footer-description">Authentic Korean food products and K-pop merchandise delivered to your doorstep.</p>
+              </div>
+              <div class="col-md-3">
+                  <h5>About Us</h5>
+                  <p>We offer a variety of authentic Korean ramen, snacks, drinks, and K-pop merchandise. Discover the taste of Korea with K-Hot Mart!</p>
+              </div>
+              <div class="col-md-3">
+                  <h5>Contact Us</h5>
+                  <ul class="list-unstyled">
+                      <li>Email: info@khotmart.com</li>
+                      <li>Phone: +123-456-7890</li>
+                      <li>Address: 123 Street, Seoul, South Korea</li>
+                  </ul>
+              </div>
+              <div class="col-md-3">
+                  <h5>Follow Us</h5>
+                  <ul class="social-links list-inline">
+                      <li class="list-inline-item"><a href="#"><i class="fab fa-facebook"></i></a></li>
+                      <li class="list-inline-item"><a href="#"><i class="fab fa-twitter"></i></a></li>
+                      <li class="list-inline-item"><a href="#"><i class="fab fa-instagram"></i></a></li>
+                      <li class="list-inline-item"><a href="#"><i class="fab fa-linkedin"></i></a></li>
+                  </ul>
+              </div>
+          </div>
+          <hr>
+          <div class="row">
+              <div class="col-md-6">
+                  <p>&copy; 2024 K-Hot Mart. All rights reserved.</p>
+              </div>
+              <div class="col-md-6 text-end">
+                  <ul class="footer-links list-inline">
+                      <li class="list-inline-item"><a href="#">Privacy Policy</a></li>
+                      <li class="list-inline-item"><a href="#">Terms of Service</a></li>
+                      <li class="list-inline-item"><a href="#">Sitemap</a></li>
+                  </ul>
+              </div>
+          </div>
+      </div>
+  </footer>
+                    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+                    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@1.16.1/dist/umd/popper.min.js"></script>
+                    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+                    <script src="products.js"></script>
+</body>
+</html>

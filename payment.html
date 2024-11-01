@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>K-Hot Mart Home Page</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="navbarfooter.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+</head>
+<body>
+    <!-- Navbar -->
+    <div class="navbars">
+        <div class="top-bar">
+            <div class="carousel-text">
+                <p class="carousel-item active">Pay via Cash-on-delivery, G-cash, Credit/Debit Card</p>
+                <p class="carousel-item">Fast delivery for authentic Korean products</p>
+                <p class="carousel-item">Enjoy exclusive deals on K-pop merchandise</p>
+            </div>
+        </div>
+        <div class="main-nav">
+            <!-- Menu Icon -->
+<div class="menu-icon" onclick="toggleCategoriesMenu()">
+    <i class="fas fa-bars"></i>
+</div>
+
+<!-- Categories Menu -->
+<div class="categories-menu">
+    <div class="categories-header">
+        <span>PRODUCT CATEGORIES</span>
+        <button class="close-button" onclick="toggleCategoriesMenu()">&#10005;</button>
+    </div>
+    <ul class="categories-list">
+        <li class="category-item">
+            <div class="category-title"><i class="fas fa-utensils"></i>Korean Ramen</div>
+        </li>
+        <li class="category-item">
+            <div class="category-title"><i class="fas fa-music"></i>K-Bundles</div>
+        </li>
+        <li class="category-item">
+            <div class="category-title"><i class="fas fa-utensils"></i>Dessert</div>
+        </li>
+        <li class="category-item">
+            <div class="category-title"><i class="fas fa-coffee"></i>Beverages</div>
+        </li>
+        <li class="category-item">
+            <div class="category-title"><i class="fas fa-cookie-bite"></i>Snacks</div>
+        </li>
+        <li class="category-item">
+            <div class="category-title"><i class="fas fa-utensils"></i>Side-dish</div>
+        </li>
+    </ul>
+</div>
+            <div class="logo">
+                <a href="home.html">
+                <img src="img/KHOT LOGO.png" alt="K-Hot Mart Logo">
+                </a>
+            </div>
+            <div class="search-container">
+                <input type="text" placeholder="I'm shopping for..." class="search-input" />
+                <button class="search-button">Search</button>
+              </div>
+            <div class="nav-icons">
+                <a href="Login.html">
+                    <i class="fa fa-user"></i> <!-- User Icon -->
+                </a>
+                <a href="wishlist.html">
+                    <i class="far fa-heart"></i> <!-- Heart Icon -->
+                </a>
+                <a href="javascript:void(0)" class="cart-icon" onclick="toggleCart()">
+                    <i class="fas fa-shopping-cart"></i> <!-- Cart Icon -->
+                </a>
+
+
+<!-- Sliding Cart -->
+<div class="cart-container" id="cartContainer">
+    <div class="cart-header">
+        <span>SHOPPING CART</span>
+        <button class="close-cart-button" onclick="toggleCart()">&#10005;</button>
+    </div>
+    <div class="cart-content">
+        <div class="empty-cart-message">
+            <i class="fas fa-shopping-cart"></i>
+            <p>Your cart is empty.</p>
+            <button class="return-to-shop-button" onclick="window.location.href='products.html'">Return to Shop</button>
+        </div>
+    </div>
+</div>
+            </div>
+        </div>
+    </div> 
+<!-- End Of Navbar -->
+
+<style>
+     .container-payment {
+            width: 50%;
+            margin: 50px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .container-payment h1 {
+            text-align: center;
+            color: #d50000;
+        }
+        .cart-summary {
+            margin-bottom: 30px;
+        }
+        .cart-summary table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        .cart-summary th, .cart-summary td {
+            padding: 10px;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+        .cart-summary th {
+            background-color: #f5f5f5;
+        }
+        .cart-summary .total-row {
+            font-weight: bold;
+        }
+        .cart-summary img {
+            width: 50px; /* Adjust size as needed */
+            height: auto;
+            margin-right: 10px;
+        }
+        .payment-form {
+            display: flex;
+            flex-direction: column;
+        }
+        .payment-form label {
+            margin: 10px 0 5px;
+        }
+        .payment-form input,
+        .payment-form select {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-bottom: 15px;
+            font-size: 16px;
+        }
+        .payment-form button {
+            background-color: #d50000;
+            color: white;
+            border: none;
+            padding: 12px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 18px;
+        }
+        .payment-form button:hover {
+            background-color: #b71c1c;
+        }
+        .hidden {
+            display: none;
+        }
+
+
+    .button-link {
+        display: inline-block;
+        background-color: #d50000;
+        color: white;
+        padding: 12px;
+        border-radius: 5px;
+        text-decoration: none;
+        font-size: 18px;
+        text-align: center;
+
+    }
+    .button-link:hover {
+        background-color: #b71c1c;
+        text-decoration: none;
+        color: black;
+    }
+
+</style>
+
+
+<div class="container-payment">
+    <h1>Payment Method</h1>
+
+    <!-- Cart Summary -->
+    <div class="cart-summary">
+        <h2>Order Summary</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Item</th>
+                    <th>Quantity</th>
+                    <th>Price</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Dynamic content populated by JavaScript -->
+            </tbody>
+            <tr class="total-row">
+                <td colspan="2">Subtotal</td>
+                <td>₱0</td>
+            </tr>
+            <tr class="total-row">
+                <td colspan="2">Shipping Fee</td>
+                <td>₱5</td>
+            </tr>
+            <tr class="total-row">
+                <td colspan="2">Discount</td>
+                <td>₱-3</td>
+            </tr>
+            <tr class="total-row">
+                <td colspan="2">Total</td>
+                <td>₱0</td>
+            </tr>
+        </table>
+    </div>
+
+    <!-- Payment Method Selection -->
+    <form class="payment-form">
+        <label for="payment-method">Select Payment Method</label>
+        <select id="payment-method" onchange="togglePaymentMethod()" required>
+            <option value="">Choose Payment Method</option>
+            <option value="card">Credit/Debit Card</option>
+            <option value="gcash">GCash</option>
+        </select>
+
+        <!-- Credit/Debit Card Fields -->
+        <div id="card-fields" class="hidden">
+            <label for="cardholder">Cardholder Name</label>
+            <input type="text" id="cardholder" placeholder="Enter your name" required>
+
+            <label for="card-number">Card Number</label>
+            <input type="text" id="card-number" placeholder="1234 5678 9123 4567" required>
+
+            <label for="expiry">Expiry Date</label>
+            <input type="month" id="expiry" required>
+
+            <label for="cvv">CVV</label>
+            <input type="text" id="cvv" placeholder="123" required>
+
+            <label for="address">Billing Address</label>
+            <input type="text" id="address" placeholder="Enter your address" required>
+        </div>
+
+        <!-- GCash Field -->
+        <div id="gcash-field" class="hidden">
+            <label for="gcash-number">GCash Mobile Number</label>
+            <input type="text" id="gcash-number" placeholder="09XXXXXXXXX" required>
+        </div>
+
+        <!-- GCash Billing Address Field -->
+        <div id="gcash-address-field" class="hidden">
+            <label for="gcash-address">Billing Address</label>
+            <input type="text" id="gcash-address" placeholder="Enter your address" required>
+        </div>
+
+        <a href="confirmation.html" class="button-link">Confirm Payment</a>
+    </form>
+    </div>
+    
+    
+    <!---FOOTER-->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3">
+                    <h2 class="footer-title">K-Hot Mart</h2>
+                    <p class="footer-description">Authentic Korean food products and K-pop merchandise delivered to your doorstep.</p>
+                </div>
+                <div class="col-md-3">
+                    <h5>About Us</h5>
+                    <p>We offer a variety of authentic Korean ramen, snacks, drinks, and K-pop merchandise. Discover the taste of Korea with K-Hot Mart!</p>
+                </div>
+                <div class="col-md-3">
+                    <h5>Contact Us</h5>
+                    <ul class="list-unstyled">
+                        <li>Email: info@khotmart.com</li>
+                        <li>Phone: +123-456-7890</li>
+                        <li>Address: 123 Street, Seoul, South Korea</li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h5>Follow Us</h5>
+                    <ul class="social-links list-inline">
+                        <li class="list-inline-item"><a href="#"><i class="fab fa-facebook"></i></a></li>
+                        <li class="list-inline-item"><a href="#"><i class="fab fa-twitter"></i></a></li>
+                        <li class="list-inline-item"><a href="#"><i class="fab fa-instagram"></i></a></li>
+                        <li class="list-inline-item"><a href="#"><i class="fab fa-linkedin"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col-md-6">
+                    <p>&copy; 2024 K-Hot Mart. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-end">
+                    <ul class="footer-links list-inline">
+                        <li class="list-inline-item"><a href="#">Privacy Policy</a></li>
+                        <li class="list-inline-item"><a href="#">Terms of Service</a></li>
+                        <li class="list-inline-item"><a href="#">Sitemap</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+     const cartData = JSON.parse(localStorage.getItem('cart')) || [];
+     if (cartData.length > 0) {
+         const cartSummary = document.querySelector('.cart-summary table tbody');
+         let subtotal = 0;
+ 
+         cartData.forEach(item => {
+             const price = parseFloat(item.price.replace('₱', ''));
+             subtotal += price;
+             const row = `<tr>
+                 <td>
+                     <img src="${item.image}" alt="${item.name}">
+                     ${item.name}
+                 </td>
+                 <td>${item.quantity}</td>
+                 <td>${item.price}</td>
+             </tr>`;
+             cartSummary.insertAdjacentHTML('beforeend', row);
+         });
+ 
+         // Update totals
+         document.querySelector('.total-row:nth-child(1) td:last-child').innerText = '₱' + subtotal;
+         document.querySelector('.total-row:nth-child(2) td:last-child').innerText = '₱5'; // Shipping Fee
+         document.querySelector('.total-row:nth-child(3) td:last-child').innerText = '₱-3'; // Discount
+         const total = subtotal + 5 - 3;
+         document.querySelector('.total-row:nth-child(4) td:last-child').innerText = '₱' + total;
+ 
+         // Store total amount in local storage
+         localStorage.setItem('totalAmount', '₱' + total);
+     }
+ });
+ 
+         function togglePaymentMethod() {
+             const paymentMethod = document.getElementById('payment-method').value;
+             const cardFields = document.getElementById('card-fields');
+             const gcashField = document.getElementById('gcash-field');
+             const gcashAddressField = document.getElementById('gcash-address-field');
+ 
+             if (paymentMethod === 'card') {
+                 cardFields.classList.remove('hidden');
+                 gcashField.classList.add('hidden');
+                 gcashAddressField.classList.add('hidden'); // Hide GCash address field
+             } else if (paymentMethod === 'gcash') {
+                 gcashField.classList.remove('hidden');
+                 cardFields.classList.add('hidden');
+                 gcashAddressField.classList.remove('hidden'); // Show GCash address field
+             } else {
+                 cardFields.classList.add('hidden');
+                 gcashField.classList.add('hidden');
+                 gcashAddressField.classList.add('hidden'); // Hide both fields
+             }
+         }
+ 
+         window.onload = function() {
+             const form = document.querySelector('.payment-form');
+             form.addEventListener('submit', function(event) {
+                 event.preventDefault(); // Prevent default form submission
+                 
+                 const paymentMethod = document.getElementById('payment-method').value;
+                 if (!paymentMethod) {
+                     alert('Please select a payment method.');
+                     return;
+                 }
+ 
+                 // Debugging log
+                 console.log('Payment method selected:', paymentMethod);
+ 
+                 // Redirect to the confirmation page
+                 window.location.href = 'confirmation.html'; // Ensure this path is correct
+             });
+         };
+     </script>
+ 
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="navbarfooter.js"></script>
+</body>
+</html>
+
+
+
